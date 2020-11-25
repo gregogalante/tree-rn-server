@@ -1,0 +1,317 @@
+// Form
+// *********************************************************************
+
+.c-form {
+  padding-bottom: 15px;
+  @include clearfix;
+}
+
+.c-form__actions {
+  margin-bottom: -15px;
+  text-align: right;
+
+  .c-button {
+    margin-left: 15px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+.c-form__title {
+  font-weight: bold;
+  font-size: 18px;
+  color: $color_black;
+  border-bottom: solid 1px $color_cenere;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+// Input normal
+// *********************************************************************
+
+.c-input {
+  margin-bottom: 15px;
+}
+
+.c-input__label {
+  font-size: 14px;
+  color: $color_black;
+  display: block;
+  margin-bottom: 4px;
+  margin-left: 4px;
+}
+
+.c-input__label-subtitle {
+  font-size: 12px;
+  color: darken($color_cenere, 20%);
+  margin-bottom: 4px;
+  margin-left: 4px; 
+  display: block;
+}
+
+.c-input__field {
+  display: block;
+  border: solid 1px darken($color_cenere, 10%);
+  border-radius: 5px;
+  background-color: $color_white;
+  color: $color_black;
+  padding: 10px;
+  outline: none;
+  width: 100%;
+  transition: all 0.15s;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  &:active, &:focus {
+    border-color: lighten($color_primary, 20%);
+    box-shadow: 0 2px 5px darken($color_cenere, 10%);
+  }
+
+  &[disabled] {
+    background-color: darken($color_white, 2%);
+
+    &:active, &:focus {
+      border-color: darken($color_cenere, 10%);
+      box-shadow: none;
+    }
+  }
+
+  &[required] {
+    // TODO
+  }
+
+  &.is-error {
+    border-color: $color_orange;
+  }
+}
+
+textarea.c-input__field {
+  min-height: 100px;
+}
+
+input[type="date"].c-input__field {
+  padding: 7px 10px;
+  padding-top: 8px;
+}
+
+// Input action
+// *********************************************************************
+
+.c-input-action {
+
+}
+
+.c-input-action__field {
+  display: inline-block;
+  border: solid 1px darken($color_cenere, 5%);
+  border-right: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: $color_white;
+  color: $color_black;
+  padding: 10px;
+  outline: none;
+  width: calc(100% - 60px);
+  transition: all 0.15s;
+
+  &:active, &:focus {
+    border-color: lighten($color_primary, 20%);
+    box-shadow: 0 2px 5px darken($color_cenere, 10%);
+  }
+
+  &.is-error {
+    border-color: $color_orange;
+  }
+}
+
+.c-input-action__button {
+  cursor: pointer;
+  display: inline-block;
+  border: solid 1px $color_primary;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: $color_primary;
+  color: $color_white;
+  padding: 10px 0;
+  outline: none;
+  width: 60px;
+  float: right;
+  transition: all 0.15s;
+
+  &:hover {
+    background-color: darken($color_primary, 5%);
+  }
+
+  &[disabled] {
+    background-color: $color_black;
+    border-color: $color_black;
+
+    &:hover {
+      background-color: $color_black;
+    }
+  }
+}
+
+// Input checkbox
+// *********************************************************************
+
+.c-input-checkbox {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.c-input-checkbox__label {
+  display: inline-block;
+  font-size: 14px;
+  color: $color_black;
+  padding-left: 25px;
+  cursor: pointer;
+  position: relative;
+
+  &:before{
+    content: '';
+    display: inline-block;
+    height: 15px;
+    width: 15px; 
+    border: solid 2px darken($color_cenere, 5%);
+    background-color: $color_white;
+    position: absolute; 
+    left: 0;
+    top: 0;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+
+  &:hover {
+    &:before{
+      background-color: darken($color_cenere, 5%);
+    }
+  }
+
+  &:after {
+    content: '';
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    background-color: $color_primary;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    border-radius: 4px;
+  }
+}
+
+.c-input-checkbox__field {
+  position: absolute;
+  top: 0; left: 0;
+  opacity: 0;
+}
+
+.c-input-checkbox .c-input-checkbox__field + .c-input-checkbox__label::after {
+  content: none;
+}
+
+.c-input-checkbox .c-input-checkbox__field:checked + .c-input-checkbox__label::after {
+  content: '';
+}
+
+.c-input-checkbox .c-input-checkbox__field[required] + .c-input-checkbox__label::before {
+  // Custom style for required checkbox
+}
+
+@media (max-width: $breakpoint_sm) {
+  .c-form__actions {
+    text-align: center;
+
+    .c-button {
+      display: block;
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+}
+
+// Input selector
+// *********************************************************************
+
+.c-input-selector {
+
+}
+
+.c-input-selector__head {
+  margin-bottom: 15px;
+}
+
+.c-input-selector__content {
+  border: solid 1px darken($color_cenere, 10%);
+  height: 200px;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+// Dependency Choices
+// *********************************************************************
+
+.choices {
+  &.is-focused {
+    .choices__inner {
+      border-color: lighten($color_primary, 20%);
+      box-shadow: 0 2px 5px darken($color_cenere, 10%);
+    }
+  }
+
+  &.is-disabled {
+    .choices__inner {
+      background-color: darken($color_white, 2%);
+    }
+
+    .choices__input {
+      background-color: darken($color_white, 2%);
+      cursor: initial;
+    }
+  }
+
+  .choices__inner {
+    background-color: $color_white;
+    border-radius: 5px;
+    border-color: darken($color_cenere, 10%);
+    min-height: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 7px;
+    padding-bottom: 2px;
+  }
+
+  .choices__input {
+    background-color: $color_white;
+  }
+
+  .choices__list--dropdown {
+    border-radius: 5px;
+    border-color: darken($color_cenere, 10%);
+    top: calc(100% + 2px);
+
+    &.is-active {
+      min-height: 150px;
+    }
+
+    .choices__list {
+      max-height: 150px;
+    }
+  }
+
+  .choices__list--multiple .choices__item {
+    background-color: $color_primary;
+    border-color: $color_primary;
+  }
+
+  .choices__list--multiple .choices__item.is-highlighted {
+      background-color: $color_primary;
+      border-color: $color_primary;
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "@matilda/core",
+  "version": "0.1.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.12.0",
+    "@rails/ujs": "^6.0.1",
+    "react": "^16.13.0",
+    "stimulus": "^1.1.1",
+    "tippy.js": "^5.1.3"
+  }
+}

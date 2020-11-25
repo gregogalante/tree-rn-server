@@ -1,0 +1,84 @@
+// Configuration
+// *********************************************************************
+
+$grid: (
+  columns: 24,
+  space: 7.5px,
+  breakpoints: (
+    xs: 581px,
+    sm: 769px,
+    md: 1025px,
+    lg: 1282px
+  )
+);
+
+// Style
+// *********************************************************************
+
+.c-grid__container, .c-grid__container-spaced {
+  margin: auto;
+  box-sizing: border-box;
+  @include clearfix;
+}
+
+.c-grid__col {
+  float: left;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+// Basic grid
+// *********************************************************************
+
+@for $i from 1 through map-get($grid, 'columns') {
+  $width: percentage(1 / (map-get($grid, 'columns') / $i));
+
+  .c-grid__col--#{$i} {
+    width: $width;
+  }
+}
+
+@each $name, $pixels in map-get($grid, 'breakpoints') {
+  @media screen and (min-width: $pixels) {
+    @for $i from 1 through map-get($grid, 'columns') {
+      $width: percentage(1 / (map-get($grid, 'columns') / $i));
+    
+      .c-grid__col--#{$name}-#{$i} {
+        width: $width;
+      }
+    }
+  }
+}
+
+// Spaced grid
+// *********************************************************************
+
+.c-grid__container-spaced {
+  margin-left: - map-get($grid, 'space');
+  margin-right:  - map-get($grid, 'space');
+
+  > .c-grid__col {
+    margin-left: map-get($grid, 'space');
+    margin-right: map-get($grid, 'space');
+  }
+
+  @for $i from 1 through map-get($grid, 'columns') {
+    $width: percentage(1 / (map-get($grid, 'columns') / $i));
+  
+    > .c-grid__col--#{$i} {
+      width: calc(#{$width} - #{map-get($grid, 'space') * 2});
+    }
+  }
+  
+  @each $name, $pixels in map-get($grid, 'breakpoints') {
+    @media screen and (min-width: $pixels) {
+      @for $i from 1 through map-get($grid, 'columns') {
+        $width: percentage(1 / (map-get($grid, 'columns') / $i));
+      
+        > .c-grid__col--#{$name}-#{$i} {
+          width: calc(#{$width} - #{map-get($grid, 'space') * 2});
+        }
+      }
+    }
+  }
+}

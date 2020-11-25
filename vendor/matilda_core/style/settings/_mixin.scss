@@ -1,0 +1,21 @@
+@mixin clearfix {
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin isPrimaryBodyBg {
+  background: linear-gradient(270deg, $color_primary, $color_primary, $color_primary);
+  background-size: 600% 600%;
+  animation: BodyPrimaryBg 15s ease infinite;
+
+  @keyframes BodyPrimaryBg { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+}

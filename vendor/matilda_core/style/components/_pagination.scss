@@ -1,0 +1,31 @@
+.c-pagination {
+  .pagination {
+    padding-top: 15px;
+    text-align: center;
+
+    a, .current {
+      border-radius: 15px;
+      display: inline-block;
+      padding: 5px 15px;
+      background-color: $color_cenere;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+
+      &:hover {
+        background-color: darken($color_cenere, 5%);
+      }
+    }
+  }
+
+  .page {
+    &.current {
+      background-color: $color_primary;
+      color: $color_white;
+
+      &:hover {
+        background-color: $color_primary;
+      }
+    }
+  }
+}

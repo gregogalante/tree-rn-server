@@ -1,0 +1,41 @@
+.c-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: solid 1px $color_cenere;
+  font-size: 14px;
+
+  thead {
+    background-color: lighten($color_cenere, 3%);
+  }
+
+  tr {
+    &:nth-child(2n) {
+      background-color: lighten($color_cenere, 5%);
+    }
+  }
+
+  th, td {
+    padding: 10px 15px;
+    border: solid 1px $color_cenere;
+    text-align: left;
+  }
+}
+
+.c-table__actions {
+  text-align: center !important;
+  width: auto;
+
+  .c-button {
+    padding: 5px 10px;
+  }
+}
+
+.c-table__responsive {
+  overflow-y: auto;
+}
+
+@media (max-width: $breakpoint_sm) {
+  .c-table__col-not-imp {
+    display: none;
+  }
+}

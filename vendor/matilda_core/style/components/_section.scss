@@ -1,0 +1,149 @@
+.c-section {
+  width: calc(100% - #{$size_sidebar_width});
+  min-height: calc(100vh - 50px);
+  margin-left: $size_sidebar_width;
+  padding: 15px;
+  transition: all 0.3s;
+  position: relative;
+  padding-top: 65px;
+
+  &--full {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+.c-section__head {
+  border-bottom: solid 1px darken($color_cenere, 5%);
+  padding-bottom: 5px;
+}
+
+.c-section__head-title {
+  display: inline-block;
+  margin: 0;
+  font-size: 30px;
+  color: $color_black;
+}
+
+.c-section__head-breadcrumb {
+  padding-top: 13px;
+  float: right;
+}
+
+.c-section__head-breadcrumb-link {
+  font-size: 14px;
+  color: $color_black;
+  font-weight: bold;
+  text-decoration: none;
+
+  &:after {
+    color: darken($color_cenere, 20%);
+    content: ' - ';
+  }
+
+  &:last-child {
+    &:after { display: none; }
+  }
+
+  &[href] {
+    color: darken($color_cenere, 20%);
+    font-weight: normal;
+
+    &:hover {
+      color: $color_primary;
+
+      &:after {
+        color: darken($color_cenere, 20%);
+      }
+    }
+  }
+}
+
+.c-section__content {
+  margin-top: 15px;
+
+  &--cols {
+    display: flex; /* [1] */
+    flex-wrap: nowrap; /* [1] */
+    overflow-x: auto; /* [1] */
+    -webkit-overflow-scrolling: touch; /* [4] */
+    -ms-overflow-style: -ms-autohiding-scrollbar; /* [5] */
+  }
+}
+
+.c-section__content-block {
+  margin-bottom: 15px;
+
+  &--col {
+    flex: 0 0 auto;
+    width: 325px;
+    margin-right: 15px;
+
+    > .c-card {
+      .c-card__body {
+        height: calc(100vh - 200px);
+      }
+    }
+  }
+}
+
+.is-menu-closed {
+  .c-section {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: $breakpoint_sm) {
+  .c-section {
+    width: 100%;
+    margin-left: 0;
+    padding: 0;
+    padding-top: 50px;
+
+    &--full {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+
+  .c-section__head {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+  }
+
+  .c-section__head-title {
+    font-size: 24px;
+  }
+
+  .c-section__head-breadcrumb {
+    padding-top: 0;
+    float: none;
+  }
+
+  .c-section__head-breadcrumb-link {
+    font-size: 10px;
+  }
+
+  .c-section__content {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .c-section__content-block {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+
+    &--col {
+      width: 100%;
+
+      > .c-card {
+        .c-card__body {
+          overflow-y: auto !important;
+        }
+      }
+    }
+  }
+}

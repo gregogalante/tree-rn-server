@@ -1,0 +1,1 @@
+import '../../../vendor/matilda_core/loader.js'

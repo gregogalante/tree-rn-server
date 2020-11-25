@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font_default, sans-serif;
+  background-color: $color_cenere;
+  color: $color_black;
+}
+
+main {
+  position: relative;
+  margin-top: $size_header_height;
+}
+
+a {
+  color: $color_primary;
+}
+
+img {
+  max-width: 100%;
+}
+
+span.code {
+  display: inline-block;
+  background-color: $color_cenere;
+  font-family: monospace;
+  padding: 2px 5px;
+  border-radius: 3px;
+}

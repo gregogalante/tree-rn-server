@@ -1,0 +1,210 @@
+.c-card {
+  background-color: $color_white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.05);
+  transition: box-shadow 0.25s linear;
+
+  &--centerpage { // center the card on the page
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+  }
+
+  &--unhidden { // permit overflow on card
+    overflow: visible;
+  }
+
+  &--hasnext { // add a margin for the next card
+    margin-bottom: 15px;
+  }
+
+  &:hover {
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.05);
+  }
+}
+
+.c-card__header {
+  background-color: $color_white;
+  color: $color_black;
+  border-bottom: solid 1px darken($color_cenere, 5%);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.c-card__header-title {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 15px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.c-card__header-actions {
+  list-style: none;
+  margin: 0;
+  padding: 7px 15px;
+  display: flex;
+  flex-direction: row;
+}
+
+.c-card__header-action {
+  display: inline-block;
+  margin-right: 5px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  .c-button {
+    padding: 8px 20px;
+  }
+
+  .c-input-action {
+    margin: 2px 0;
+    font-size: 14px;
+
+    .c-input__field, .c-input-action__field {
+      padding: 7px 10px;
+    }
+    .c-input-action__button {
+      padding: 7px 0;
+    }
+  }
+}
+
+.c-card__header-action-text {
+  font-size: 12px;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.c-card__body {
+  padding: 15px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+  &--list { // manage style for ul attribute
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &--scrollable { // permit scroll of content
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+  }
+}
+
+.c-card__body-list-item {
+  border-bottom: solid 1px darken($color_cenere, 5%);
+  color: $color_black;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &--padding { // Use it when link or content is not present
+    padding: 15px;
+  }
+
+  &.is-active {
+    background-color: rgba($color_primary, 0.1);
+  }
+}
+
+.c-card__body-list-item-link {
+  display: block;
+  padding: 15px;
+  color: $color_black;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $color_cenere;
+    text-decoration: none;
+  }
+
+  &.is-active {
+    background-color: rgba($color_primary, 0.1);
+  }
+}
+
+.c-card__body-list-item-content {
+  display: inline-block;
+  padding-right: 90px;
+}
+
+.c-card__body-list-item-action {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 14px;
+  color: $color_primary;
+}
+
+@media (max-width: $breakpoint_sm) {
+  .c-card {
+    background-color: $color_white;
+    border-radius: 0;
+    overflow: hidden;
+
+    &--centerpage {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: none;
+      width: calc(100% - 30px);
+      margin: auto;
+      border-radius: 15px;
+      margin-top: $size_header_height + 15px;
+      margin-bottom: 15px;
+    }
+  }
+
+  .c-card__header {
+    border-radius: 0;
+    display: block;
+  }
+
+  .c-card__header-title {
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    padding-bottom: 5px;
+  }
+
+  .c-card__header-actions {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .c-card__header-action {
+    width: 100%;
+    max-width: 50vw;
+
+    .c-button {
+      display: block;
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  .c-card__body {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+    &--scrollable {
+      max-height: none;
+      overflow-y: hidden;
+    }
+  }
+}
+
+@media (max-width: $breakpoint_sm) {}
