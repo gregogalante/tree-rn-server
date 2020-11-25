@@ -135,7 +135,7 @@ Rails.application.configure do
   ############################################################################
 
   # Enable possibility to serve files on public folder.
-  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
+  config.public_file_server.enabled = true # ENV['RAILS_SERVE_STATIC_FILES'].present?
 
   # Enable cache lifetime (use with action_controller.perform_caching true).
   config.public_file_server.headers = {
