@@ -10,6 +10,7 @@ class CreateMatildaCoreUsers < ActiveRecord::Migration[6.0]
       t.string :privacy
       t.string :recover_password_code
       t.datetime :recover_password_code_time
+      t.string :portfolio_code
       t.timestamps
     end
   end
