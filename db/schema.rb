@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_25_172407) do
+ActiveRecord::Schema.define(version: 2020_12_11_122630) do
+
+  create_table "cards", force: :cascade do |t|
+    t.string "name"
+    t.string "game"
+    t.string "user_uuid"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "matilda_core_groups", primary_key: "uuid", id: :string, force: :cascade do |t|
     t.string "name"
@@ -50,6 +59,7 @@ ActiveRecord::Schema.define(version: 2020_11_25_172407) do
     t.string "privacy"
     t.string "recover_password_code"
     t.datetime "recover_password_code_time"
+    t.string "portfolio_code"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

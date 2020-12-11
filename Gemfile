@@ -17,7 +17,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # Use foreman to start multiple process one time
 gem 'foreman'
 # Generate random data
-gem 'faker'
+gem 'faker', git: 'https://github.com/faker-ruby/faker'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password

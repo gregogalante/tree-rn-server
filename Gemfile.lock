@@ -1,4 +1,11 @@
 GIT
+  remote: https://github.com/faker-ruby/faker
+  revision: ec06d217644cf3d66bd0e658c9b168af8f0c38c7
+  specs:
+    faker (2.15.1)
+      i18n (>= 1.6, < 2)
+
+GIT
   remote: https://github.com/ideonetwork/matilda-core
   revision: f0c8e72ba99946a1cbf402c9662142213ec0b0cd
   specs:
@@ -88,8 +95,6 @@ GEM
     crass (1.0.6)
     erubi (1.10.0)
     evnt (3.7.1)
-    faker (2.14.0)
-      i18n (>= 1.6, < 2)
     ffi (1.13.1)
     foreman (0.87.2)
     globalid (0.4.2)
@@ -218,7 +223,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
-  faker
+  faker!
   foreman
   jbuilder (~> 2.7)
   listen (>= 3.0.5)
