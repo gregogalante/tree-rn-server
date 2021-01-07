@@ -1,6 +1,6 @@
-# Application
+# Tree RN Server
 
-This is a Ruby on Rails application.
+Server in Ruby on Rails per il contest del corso di React Native 2020 organizzato da Tree School.
 
 ## Installation
 
@@ -35,9 +35,9 @@ All data structure rappresentations can be found on **app/models** folder.
 
 ...
 
-## GIOCO
+## Contest
 
-TRE FASI
+Il contest prevede lo sviluppo di un applicazione mobile che utilizza le API del web server ed è suddiviso in tre fasi:
 
 FASE 1:
 
