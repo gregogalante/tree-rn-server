@@ -1,15 +1,15 @@
 GIT
   remote: https://github.com/faker-ruby/faker
-  revision: ec06d217644cf3d66bd0e658c9b168af8f0c38c7
+  revision: 664cbafe9d15bddb97843dcbe107204e6e7291cb
   specs:
     faker (2.15.1)
       i18n (>= 1.6, < 2)
 
 GIT
   remote: https://github.com/ideonetwork/matilda-core
-  revision: f0c8e72ba99946a1cbf402c9662142213ec0b0cd
+  revision: 85de7bebf64877e7d61d79301d1032019e91b0b1
   specs:
-    matilda_core (0.2.7)
+    matilda_core (0.2.10)
       bcrypt
       evnt
       jwt
@@ -82,7 +82,7 @@ GEM
       msgpack (~> 1.0)
     builder (3.2.4)
     byebug (11.1.3)
-    capybara (3.33.0)
+    capybara (3.34.0)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
@@ -95,11 +95,11 @@ GEM
     crass (1.0.6)
     erubi (1.10.0)
     evnt (3.7.1)
-    ffi (1.13.1)
+    ffi (1.14.2)
     foreman (0.87.2)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    i18n (1.8.5)
+    i18n (1.8.7)
       concurrent-ruby (~> 1.0)
     jbuilder (2.10.1)
       activesupport (>= 5.0.0)
@@ -116,10 +116,10 @@ GEM
       activerecord
       kaminari-core (= 1.2.1)
     kaminari-core (1.2.1)
-    listen (3.3.1)
+    listen (3.4.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
-    loofah (2.8.0)
+    loofah (2.9.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.7.1)
@@ -129,15 +129,17 @@ GEM
     method_source (1.0.0)
     mimemagic (0.3.5)
     mini_mime (1.0.2)
-    mini_portile2 (2.4.0)
-    minitest (5.14.2)
+    mini_portile2 (2.5.0)
+    minitest (5.14.3)
     msgpack (1.3.3)
     nio4r (2.5.4)
-    nokogiri (1.10.10)
-      mini_portile2 (~> 2.4.0)
+    nokogiri (1.11.1)
+      mini_portile2 (~> 2.5.0)
+      racc (~> 1.4)
     pg (1.2.3)
     public_suffix (4.0.6)
     puma (3.12.6)
+    racc (1.5.2)
     rack (2.2.3)
     rack-cors (1.1.1)
       rack (>= 2.0.0)
@@ -194,14 +196,14 @@ GEM
     sqlite3 (1.4.2)
     thor (1.0.1)
     thread_safe (0.3.6)
-    tzinfo (1.2.8)
+    tzinfo (1.2.9)
       thread_safe (~> 0.1)
     web-console (4.1.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
-    webdrivers (4.4.1)
+    webdrivers (4.4.2)
       nokogiri (~> 1.6)
       rubyzip (>= 1.3.0)
       selenium-webdriver (>= 3.0, < 4.0)
@@ -214,7 +216,7 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.4.1)
+    zeitwerk (2.4.2)
 
 PLATFORMS
   ruby
@@ -243,7 +245,7 @@ DEPENDENCIES
   webpacker (~> 4.0)
 
 RUBY VERSION
-   ruby 2.5.0p0
+   ruby 2.7.2p137
 
 BUNDLED WITH
    2.1.4
