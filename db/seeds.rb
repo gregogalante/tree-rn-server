@@ -6,13 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-5.times do |index|
+50.times do |index|
   user_uuid = SecureRandom.uuid
   MatildaCore::User.create(
     uuid: user_uuid,
-    username: "utente_#{25 + index + 1}",
+    username: "utente_#{index + 1}",
     name: 'Utente',
-    surname: "Numero #{25 + index + 1}",
+    surname: "Numero #{index + 1}",
     password: BCrypt::Password.create('Password1!')
   )
 
@@ -20,7 +20,7 @@
     user_uuid: user_uuid,
     primary: true,
     confirmed: true,
-    email: "utente_#{25 + index + 1}@mail.com"
+    email: "utente_#{index + 1}@mail.com"
   )
 
   25.times do
