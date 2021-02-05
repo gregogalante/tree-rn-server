@@ -31,10 +31,6 @@ All Frontend code can be found on **app/javascript** folder.
 
 All data structure rappresentations can be found on **app/models** folder.
 
-## Other informations
-
-...
-
 ## Contest
 
 Il contest prevede lo sviluppo di un applicazione mobile che utilizza le API del web server ed è suddiviso in tre fasi:
